@@ -169,3 +169,57 @@ h3 {
     font-weight: 400;
     margin-bottom: 2rem;
 }
+
+/* --- Learn Page / Calculator Refinements --- */
+
+/* Centers the header and intro text to match the form */
+h1, .p-intro {
+    text-align: center;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    margin-top: 2rem;
+    font-weight: 800;
+    color: #222;
+}
+
+/* Give the intro paragraph some breathing room and personality */
+p {
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+/* This makes the form "pop" against the background */
+form {
+    margin-top: 3rem !important; /* Forces space between text and form */
+    border-top: 4px solid #333; /* Adds a nice 'accent' bar to the top of the form */
+}
+
+/* Style for the Hobby Select dropdown to match our cleaner inputs */
+select.form-select, select {
+    appearance: none; /* Removes default browser arrow for a cleaner look */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 16px 12px;
+}
+
+/* Subtle animation for the total cost field when it updates */
+#totalCost {
+    transition: all 0.3s ease;
+    border-color: #333;
+    background-color: #fff;
+    color: #000;
+}
+
+    /* If the total is calculated, highlight it slightly */
+    #totalCost:not([value=""]) {
+        background-color: #f0fdf4; /* Very light green hint */
+        border-style: solid;
+    }
