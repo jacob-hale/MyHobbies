@@ -11,7 +11,7 @@ namespace MyHobbies.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Learn()
         {
             return View();
         }

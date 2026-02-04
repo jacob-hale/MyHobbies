@@ -1,31 +1,171 @@
-html {
-  font-size: 14px;
+/* --- Global & Layout Refinements --- */
+:root {
+    --primary-chill: #6c757d; /* Soft gray */
+    --accent-light: #f8f9fa;
+    --card-shadow: 0 8px 30px rgba(0, 0, 0, 0.04);
 }
 
-@media (min-width: 768px) {
-  html {
+html {
     font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    /* Adding a subtle background tint to make white cards pop */
+    background-color: #fcfcfc;
+    color: #444;
+    margin-bottom: 60px;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
-  color: var(--bs-secondary-color);
-  text-align: end;
+/* --- Navbar Styling --- */
+.navbar {
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.02) !important;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
-  text-align: start;
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #333 !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+/* --- Form & Calculator Specific Styling --- */
+/* Target the form we built to make it a nice "floating" card */
+form {
+    background: #ffffff;
+    padding: 2.5rem;
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    max-width: 500px;
+    margin: 2rem auto; /* Centers the form in the main container */
+    border: 1px solid #eee;
+}
+
+label {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--primary-chill);
+    margin-bottom: 0.6rem;
+    display: block;
+}
+
+/* Style inputs to be softer and more rounded */
+.form-control,
+input[type="number"],
+input[type="text"],
+select {
+    border-radius: 10px;
+    border: 1.5px solid #ebebeb;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1.25rem;
+    transition: all 0.2s ease-in-out;
+}
+
+    .form-control:focus,
+    input:focus,
+    select:focus {
+        border-color: var(--primary-chill);
+        box-shadow: 0 0 0 4px rgba(108, 117, 125, 0.1);
+        outline: none;
+    }
+
+/* The Calculate Button */
+input[type="button"] {
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s ease, background-color 0.2s;
+}
+
+    input[type="button"]:hover {
+        background-color: #000;
+    }
+
+    input[type="button"]:active {
+        transform: scale(0.97);
+    }
+
+/* Total Cost Readonly Style */
+#totalCost {
+    background-color: #f9f9f9;
+    border: 1.5px dashed #ddd;
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #222;
+    text-align: center;
+}
+
+/* --- Footer --- */
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px;
+    background-color: white;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 768px) {
+    form {
+        padding: 1.5rem;
+        margin: 1rem;
+    }
+}
+
+.text-center ul {
+    display: inline-block; /* Shrinks the list box to fit the text */
+    text-align: left; /* Aligns the text inside that box to the left */
+    margin: 1rem 0;
+    padding-left: 20px;
+}
+
+/* Style the hobby images */
+.text-center img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 12px; /* Matches your "chill" theme */
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-top: 10px;
+    transition: transform 0.3s ease;
+}
+
+    /* Hover effect for your photos */
+    .text-center img:hover {
+        transform: scale(1.02);
+    }
+
+/* Style the hobby descriptions */
+.text-center p {
+    max-width: 700px; /* Prevents lines from getting too long to read */
+    margin: 10px auto 40px auto; /* Centers the text block and adds space below */
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Headline styling */
+.display-4 {
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    color: var(--primary-chill);
+    font-weight: 400;
+    margin-bottom: 2rem;
 }
