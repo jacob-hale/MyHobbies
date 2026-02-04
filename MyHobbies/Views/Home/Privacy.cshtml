@@ -1,6 +1,31 @@
 ﻿@{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Sign up to learn with me!";
 }
 <h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
+<p>I love sharing my hobbies with others. Sadly I am still a poor college student and I need a cash flow.
+    Lucky for you, my rate is pretty low. Only $15 an hour to learn all about my hobbies!
+</p>
+<form>
+    <label>
+        Pick a hobby:
+    </label>
+    <select>
+        <option value="" selected disabled>Select One</option>
+        <option value="videogames">Video Games</option>
+        <option value="sourdough">Sourdough Bread</option>
+        <option value="crossstitch">Cross Stitch & Embroidery</option>
+    </select>
+    <br />
+    <label>
+        Number of hours:
+    </label>
+    <input type="number" min="1" id="hours"/>
+    <br />
+    <input type="button" value="Calculate Cost" onclick="calculateCost()"/>
+    <br />
+    <label>Total Cost:</label>
+    <input type="text" id="totalCost" readonly value=""/>
+</form>
+
+<script src="~/js/site.js"></script>
