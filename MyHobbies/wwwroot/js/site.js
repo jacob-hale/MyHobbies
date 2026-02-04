@@ -2,6 +2,7 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
+// Calculate cost based on hours input (jQuery)
 function calculateCost() {
     const hours = parseFloat($('#hours').val()) || 0;
 
